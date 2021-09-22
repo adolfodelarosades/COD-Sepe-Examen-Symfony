@@ -1,11 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+  {{ parent() }}
+  <link rel="stylesheet" type="text/css" href="/css/styles.css">
+{% endblock %}
+
+{% block body %}
+
 <main class="container py-4">
-    <h1 class="text-center">Cursos</h1>
+    <h1 class="text-center">Alumnos</h1>
 
     {# dump editoriales #} <!-- Lo saca a la consola-->
     
     
     <p> </p>
-    {% include 'comunes/_mensajes.html.twig' %}
     <table class="table table-striped">
     <thead>
         <tr>
@@ -24,7 +32,7 @@
             <td> {{ estudiante.apellido1 }}</td>
             <td> {{ estudiante.apellido2 }}</td>
             <td>
-              <a href="{{ path('home', {id: estudiante.id}) }}"><i class="fa fa-search" style="font-size:24px;color:grey;"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="{{ path('home', {id: estudiante.id}) }}">Ver Notas</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               
             </td>
         </tr>
@@ -32,3 +40,4 @@
     </tbody>
     </table>
   </main>
+  {% endblock %}
